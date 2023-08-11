@@ -4,12 +4,13 @@
   "description": "APIRest",
   "main": "index.js",
   "scripts": {
-    "r": "nodemon index.js"
+    "r": "nodemon motorPlantillas.js"
   },
   "keywords": [],
   "author": "Rjchi",
   "license": "ISC",
   "dependencies": {
+    "ejs": "^3.1.9",
     "express": "^4.18.2",
     "morgan": "^1.10.0"
   },
