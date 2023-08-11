@@ -1,4 +1,12 @@
 <%- include('./partials/header') %>
-
     <h1>Home</h1>
-    <%- include('./partials/footer') %>
+
+    <% if (isActive) { %>
+        <h2>Esta activo</h2>
+    <% } else { %>
+        <h2>No esta activo</h2>
+    <% } %>
+
+    <%= new Date() %>
+
+<%- include('./partials/footer') %>

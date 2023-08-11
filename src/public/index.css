@@ -1,4 +1,4 @@
-.h {
+h1 {
     color: red;
     font-size: xx-large;
     font-weight: bolder;
@@ -6,6 +6,6 @@
 }
 
 body {
-    color: aliceblue;
-    background-color: black;
+    color: rgb(0, 0, 0);
+    background-color: teal;
 }

@@ -7,7 +7,7 @@ const app = express();
 
 // Con este podemos servir contenido de forma mas dinamica
 // todo lo que este dentro de esta carpeta va a ser publico y va a poder ser accedido
-app.use("/public", express.static(path.join(__dirname, 'ejemplo')));
+app.use("/public", express.static(path.join(__dirname, 'public')));
 
 app.all("/", (req, res) => {
   res.send("Home");
