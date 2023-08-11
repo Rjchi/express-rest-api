@@ -1,4 +1,5 @@
 const express = require("express");
+const axios = require("axios");
 // con esto requerimos el modulo ejs para trabajar con plantillas
 require("ejs");
 const { render } = require("ejs");
@@ -11,7 +12,7 @@ app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "src/views"));
 
 // Especificamos donde esta el css
-app.use("/public", express.static(path.join(__dirname, 'src/public')));
+app.use("/public", express.static(path.join(__dirname, "src/public")));
 
 app.get("/", (req, res) => {
   const title = "Esto es un titulo";
@@ -20,28 +21,33 @@ app.get("/", (req, res) => {
 });
 
 app.get("/home", (req, res) => {
-  let isActive = true
+  let isActive = true;
 
-  res.render("home", {isActive:isActive});
+  res.render("home", { isActive: isActive });
 });
 
 app.get("/users", (req, res) => {
   const users = [
     {
-      id:1,
-      name:"Rosa",
+      id: 1,
+      name: "Rosa",
     },
     {
-      id:2,
-      name:"Pedro",
+      id: 2,
+      name: "Pedro",
     },
     {
-      id:3,
-      name:"Esteban",
-    }
-  ]
+      id: 3,
+      name: "Esteban",
+    },
+  ];
 
   res.render("users", { users: users });
+});
+
+app.get("/posts", async (req, res) => {
+  const posts = await axios.get("https://jsonplaceholder.typicode.com/posts");
+  res.render("posts", { posts: posts.data });
 });
 
 app.listen(5000, () => console.log("PORT 5000"));

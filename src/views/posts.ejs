@@ -1,0 +1,11 @@
+<%- include('./partials/header.ejs') %>
+<li>
+    <% posts.forEach(post => { %>
+        <li>
+            <div><%= post.id %></div>
+            <div><%= post.title %></div>
+            <div><%= post.body %></div>
+        </li>
+    <% }) %>
+</li>
+<%- include('./partials/footer.ejs') %>
