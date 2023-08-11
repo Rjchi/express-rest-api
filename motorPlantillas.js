@@ -1,9 +1,13 @@
 const express = require("express");
 const axios = require("axios");
+const getCon = require("./planetscale")
 // con esto requerimos el modulo ejs para trabajar con plantillas
 require("ejs");
 const { render } = require("ejs");
 const path = require("path");
+
+// Llamamos a la funcion que contiene la conexion a la base de datos
+getCon()
 const app = express();
 
 // Configuramos el motor de plantillas que vamos a utilizar
