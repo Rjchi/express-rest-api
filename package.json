@@ -4,7 +4,7 @@
   "description": "APIRest",
   "main": "index.js",
   "scripts": {
-    "r": "nodemon server.js"
+    "r": "nodemon index.js"
   },
   "keywords": [],
   "author": "Rjchi",
